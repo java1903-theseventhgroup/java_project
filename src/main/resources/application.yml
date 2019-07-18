@@ -1,0 +1,12 @@
+#DB Configuration
+test:
+  driver-class-name: com.mysql.jdbc.Driver
+  jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false
+  username: root
+  password: 121121
+
+#加载Mybatis映射文件
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+#pojo别名扫描
+  type-aliases-package: com.qf.entity
