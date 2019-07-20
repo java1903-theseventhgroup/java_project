@@ -2,7 +2,41 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qf.dao.CourseDao">
-    <select id="findAll" resultType="course">
-        select * from course;
+
+    <resultMap type="com.qf.domain.Course" id="resultMap">
+        <id property="courseId" column="course_id"/>
+        <result property="courseSubtitle" column="course_subtitle"/>
+        <result property="courseSummary" column="course_summary"/>
+        <result property="courseAuthor" column="course_author"/>
+        <result property="courseClassNum" column="course_class_num"/>
+        <result property="courseSprice" column="course_sprice"/>
+        <result property="courseStudyPeoples" column="course_study_peoples"/>
+        <result property="courseImgurl" column="course_imgur"/>
+        <result property="courseOtherImgurl" column="course_other_imgurl"/>
+        <result property="courseTeacherIntro" column="course_teacher_intro"/>
+        <result property="courseFeatureIntroI" column="course_feature_intro_i"/>
+        <result property="courseFeatureIntroII" column="course_feature_intro_ii"/>
+        <result property="courseTitle" column="course_title"/>
+        <result property="coursePeoples" column="course_peoples"/>
+        <result property="courseTableImgurl" column="course_table_imgurl"/>
+        <result property="coursePurchaseAttention" column="course_purchase_attention"/>
+        <result property="courseClassId" column="course_class_id"/>
+        <result property="courseCollege" column="course_college"/>
+    </resultMap>
+
+    <!-- 查询全部课程表   -->
+    <select id="findAll" resultMap="resultMap">
+        select * from course
     </select>
+    <!--  查询课程下的学院表    -->
+    <select id="findByAbility" parameterType="String" resultMap="resultMap">
+    select * from course where course_college=#{courseCollege}
+    </select>
+    <!--  专题首页展示  -->
+    <select id="findHomePage" resultMap="resultMap">
+    select course_subtitle,course_imgurl,course_update_time from course order by course_update_time desc
+    </select>
+
+
+
 </mapper>

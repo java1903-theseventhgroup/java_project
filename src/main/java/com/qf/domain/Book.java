@@ -1,6 +1,7 @@
 package com.qf.domain;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -15,8 +16,10 @@ public class Book {
     private String bookSubtitle;            //书名
     private String booKeditRecomend;        //编辑推荐语
     private Double bookSprice;               //图书价格
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date bookTime;                  //上架时间
     private String bookAuthor;              //作者名
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date bookData;                  //出版时间
     private String bookContent;             //内容简介
     private String bookPublisher;           //出版社名称

@@ -10,9 +10,9 @@ import java.util.Date;
 @Data
 public class Listen {
     private Integer listenId;
-    private  String listenSubtitle;         //书名
+    private String listenSubtitle;         //书名
     private Double listenSprice;            //听书价格
-    private Date listenAudioTime;            //音频时长
+    private String listenAudioTime;            //音频时长
     private String listenAuthor;             //解读人（作者
     private String listenData;              //上架时间（24/48任意一个
     private String listenContent;            //音频内容简介（长

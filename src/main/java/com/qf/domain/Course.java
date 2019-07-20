@@ -1,8 +1,10 @@
 package com.qf.domain;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+import java.util.Date;
 
         /**
         *     课程表实体类
@@ -10,13 +12,14 @@ import java.io.Serializable;
 @Data
 public class Course implements Serializable {
     private Integer courseId;
-    private String courseSubtitle;                  //书标题
+    private String courseSubtitle;                  //书标题                     专题返回书标题@DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date  courseUpdateTime;                //书更新的时间                // 专题返回书的更新时间
     private String courseSummary;                   //书内容摘要
     private String courseAuthor;                    //作者
     private Integer courseClassNum;                 //总共多少讲
     private Double courseSprice;                    //价格
     private Integer courseStudyPeoples;             //加入学习人数
-    private String courseImgurl;                    //界面的书图片
+    private String courseImgurl;                    //界面的书图片               专题返回的图片
     private String courseOtherImgurl;               //详情页置顶作者的图片
     private String courseTeacherIntro;               //老师简介
     private String courseFeatureIntroI;              //课程简介的上层
@@ -26,5 +29,5 @@ public class Course implements Serializable {
     private String courseTableImgurl;               //课程表图片
     private String coursePurchaseAttention;          //购买须知
     private Integer courseClassId;      // 外键（绑定对应二级目录）
-    private Integer courseCollege;                    //学院
+    private String courseCollege;                    //学院
 }
