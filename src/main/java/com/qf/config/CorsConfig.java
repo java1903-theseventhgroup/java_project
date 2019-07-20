@@ -1,5 +1,8 @@
 package com.qf.config;
 
+/**
+ *   解决跨域前后端跨域问题
+ */
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
